@@ -1,4 +1,4 @@
-const POINT_TYPE = ['taxi', 'bus', 'train', 'ship', 'drive', 'flight', 'check-in', 'sightseeing', 'restaurant'];
+const POINT_TYPES = ['taxi', 'bus', 'train', 'ship', 'drive', 'flight', 'check-in', 'sightseeing', 'restaurant'];
 
 const FilterType = {
   EVERYTHING: 'everything',
@@ -23,4 +23,4 @@ const UpdateType = {
   INIT: 'INIT',
 };
 
-export {POINT_TYPE, FilterType, SortType, UserAction, UpdateType};
+export {POINT_TYPES, FilterType, SortType, UserAction, UpdateType};

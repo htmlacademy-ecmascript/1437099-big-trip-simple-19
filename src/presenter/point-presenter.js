@@ -152,9 +152,9 @@ export default class PointPresenter {
   #escKeyDownHandler = (evt) => {
     if (evt.key === 'Escape' || evt.key === 'Esc') {
       evt.preventDefault();
+      this.#editPointComponent.reset(this.#point);
       this.#replaceFormToCard();
       document.removeEventListener('keydown', this.#escKeyDownHandler);
-      this.#editPointComponent.reset(this.#point);
     }
   };
 }

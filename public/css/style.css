@@ -494,6 +494,7 @@ main {
   margin-bottom: 5px; }
 
 .event__type-label {
+  text-transform: capitalize;
   position: relative;
   display: block;
   padding: 5px 10px 5px 62px;

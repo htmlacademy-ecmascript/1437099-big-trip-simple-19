@@ -1,5 +1,4 @@
 import {render} from './framework/render';
-// import { getRandomMockPoints, destinationsArray } from './mock/point.js';
 import PointsModel from './model/points-model.js';
 import FilterModel from './model/filter-model.js';
 import FilterPresenter from './presenter/filter-presenter.js';
@@ -50,6 +49,7 @@ function handleNewPointButtonClick() {
 pointsModel.init()
   .finally(() => {
     render(newPointButtonComponent, headerContentEl);
+    newPointButtonComponent.element.disabled = !pointsModel.points.length;
   });
 filterPresenter.init();
 listPresenter.init();

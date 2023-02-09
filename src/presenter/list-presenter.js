@@ -87,6 +87,9 @@ export default class ListPresenter {
       onDataChange: this.#handleViewAction,
       onDestroy: this.#onNewPointDestroy,
     });
+    if (this.#emptyListComponent) {
+      remove(this.#emptyListComponent);
+    }
     this.#newPointPresenter.init();
   }
 
