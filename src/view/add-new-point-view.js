@@ -260,6 +260,12 @@ export default class AddNewPointView extends AbstractStatefulView {
   #destinationChangeHandler = (evt) => {
     evt.preventDefault();
     const tripDestination = this.#destinations.find((item) => item.name === evt.target.value);
+    if (tripDestination === undefined) {
+      this.updateElement({
+        destination: undefined,
+      });
+      return;
+    }
     this.updateElement({
       destination: tripDestination.id,
     });
