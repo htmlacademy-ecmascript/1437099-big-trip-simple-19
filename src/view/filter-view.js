@@ -28,10 +28,10 @@ export default class FilterView extends AbstractView {
     this.#handleFilterChange = onFilterChange;
     this.filters = filter;
     this.#currentFilterName = currentFilterName;
-    this.element.addEventListener('change', this.#clickOnFilterHandler);
+    this.element.addEventListener('change', this.#filterTypeChangeHandler);
   }
 
-  #clickOnFilterHandler = (evt) => {
+  #filterTypeChangeHandler = (evt) => {
     const {filterName} = evt.target.dataset;
     this.#handleFilterChange(filterName);
   };

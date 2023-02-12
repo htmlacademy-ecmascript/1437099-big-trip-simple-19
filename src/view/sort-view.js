@@ -40,10 +40,10 @@ export default class SortView extends AbstractView {
     super();
     this.#handleSortChange = onSortChange;
     this.#currentSort = currentSort;
-    this.element.addEventListener('input', this.#handleClickSortBtn);
+    this.element.addEventListener('change', this.#sortTypeChangeHandler);
   }
 
-  #handleClickSortBtn = (evt) => {
+  #sortTypeChangeHandler = (evt) => {
     evt.preventDefault();
     const {sortType} = evt.target.dataset;
     this.#handleSortChange(sortType);

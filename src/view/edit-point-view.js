@@ -58,7 +58,7 @@ function createPicturesTemplate(pictures) {
 }
 
 function createDestinationTemplate(destination) {
-  if(destination !== undefined) {
+  if (destination !== undefined) {
     const {description, pictures} = destination;
     return (
       `<section class="event__section  event__section--destination ${description === undefined ? 'visually-hidden' : ''}">
@@ -264,7 +264,10 @@ export default class EditPointView extends AbstractStatefulView {
     evt.preventDefault();
     const tripDestination = this.#destinations.find((item) => item.name === evt.target.value);
     if (tripDestination === undefined) {
-      this.reset(this._state);
+      this.updateElement({
+        destination: undefined,
+      });
+      return;
     }
     this.updateElement({
       destination: tripDestination.id,
